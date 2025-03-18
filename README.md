@@ -1,5 +1,21 @@
 # 🎥 Hybrid Movie Recommender Engine
 
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Streamlit](https://img.shields.io/badge/Built%20With-Streamlit-red)](https://streamlit.io/)
+[![GitHub stars](https://img.shields.io/github/stars/rah1809/hybrid-movie-recommender)](https://github.com/rah1809/hybrid-movie-recommender/stargazers)
+
+---
+
+
+
+
+
+
+
+
+# 🎥 Hybrid Movie Recommender Engine
+
 A sophisticated movie recommendation system that combines multiple recommendation algorithms to provide personalized movie suggestions. Built with Streamlit, this interactive application allows users to explore different recommendation approaches and evaluate their performance.
 
 ## ✨ Key Features
