@@ -23,11 +23,9 @@ wheels/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Environment
-.env
-.venv
-env/
+# Virtual Environment
 venv/
+env/
 ENV/
 
 # IDE
@@ -36,8 +34,25 @@ ENV/
 *.swp
 *.swo
 
-# OS
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Streamlit
+.streamlit/
+
+# Local development settings
+.env
+.env.local
+
+# Data files (optional - remove if you want to include data)
+# data/
+
+# Logs
+*.log
+
+# OS
 Thumbs.db
 
 # Project specific

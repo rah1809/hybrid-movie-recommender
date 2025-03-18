@@ -1,31 +1,40 @@
-# Hybrid Movie Recommendation Engine
+# 🎥 Hybrid Movie Recommender Engine
 
-A sophisticated movie recommendation system combining collaborative filtering, content-based filtering, and matrix factorization approaches using the MovieLens dataset.
+A sophisticated movie recommendation system that combines multiple recommendation algorithms to provide personalized movie suggestions. Built with Streamlit, this interactive application allows users to explore different recommendation approaches and evaluate their performance.
 
-## Project Structure
-```
-📁 recommender-system-project
-├── data/                      # Data directory
-│   └── ml-1m.zip             # MovieLens 1M dataset
-├── notebooks/                 # Jupyter notebooks for analysis
-│   ├── 01_DataExploration.ipynb
-│   └── 02_Trivial_MPI_CF_SVD.ipynb
-├── src/                      # Source code
-│   ├── recommenders.py       # Recommendation algorithms
-│   └── evaluation.py         # Evaluation metrics
-├── streamlit_app/           # Interactive web application
-│   └── app.py               # Streamlit application
-├── report/                  # Project documentation
-├── presentation/           # Project presentation materials
-└── requirements.txt        # Project dependencies
-```
+## ✨ Key Features
 
-## Setup
+- **Multiple Recommendation Algorithms:**
+  - 🎯 Trivial Recommender (Popular movies)
+  - 📈 Most Popular Items (MPI)
+  - 👥 User-based Collaborative Filtering
+  - 🎬 Item-based Collaborative Filtering
+  - 🔢 SVD (Matrix Factorization)
+- **Interactive UI:**
+  - Easy-to-use sidebar controls
+  - Real-time recommendations
+  - Expandable movie cards with ratings and genres
+- **Evaluation Dashboard:**
+  - RMSE & MAE comparisons
+  - Precision@K & Recall@K metrics
+  - Interactive visualizations using Plotly
+  - Detailed performance analysis
 
-1. Create a virtual environment:
+## 🛠️ Tech Stack
+
+- **Python 3.8+**
+- **Streamlit** - Interactive web interface
+- **Surprise** - Recommendation algorithms
+- **Pandas** - Data manipulation
+- **Plotly** - Interactive visualizations
+- **NumPy** - Numerical computations
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+git clone https://github.com/yourusername/hybrid-movie-recommender.git
+cd hybrid-movie-recommender
 ```
 
 2. Install dependencies:
@@ -33,59 +42,67 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. Extract the MovieLens dataset:
+3. Run the Streamlit app:
 ```bash
-cd data
-unzip ml-1m.zip
+streamlit run streamlit_app/app.py
 ```
 
-## Components
+## 🚀 Usage
 
-### 1. Data Exploration (notebooks/01_DataExploration.ipynb)
-- Dataset analysis
-- Data preprocessing
-- Feature engineering
-- Visualization of user-movie interactions
+### Settings Panel
+- Choose from 5 different recommendation algorithms
+- Enter User ID (1-6040)
+- Select number of recommendations (1-20)
+- Click "Get Recommendations" to generate personalized suggestions
 
-### 2. Recommendation Algorithms (notebooks/02_Trivial_MPI_CF_SVD.ipynb)
-- Collaborative Filtering (CF)
-- Matrix Factorization
-- Singular Value Decomposition (SVD)
-- Performance optimization using MPI
+### Instructions
+1. Select a recommendation algorithm from the dropdown
+2. Enter a User ID to get personalized recommendations
+3. Adjust the number of recommendations using the slider
+4. Click "Get Recommendations" to see results
+5. Switch to "Evaluation Dashboard" to compare algorithm performance
 
-### 3. Evaluation Metrics (src/evaluation.py)
-- RMSE (Root Mean Square Error)
-- MAE (Mean Absolute Error)
-- Precision@K
-- Recall@K
-- NDCG (Normalized Discounted Cumulative Gain)
+### Evaluation Dashboard
+- Compare algorithm performance using various metrics
+- View interactive bar charts for RMSE and MAE
+- Analyze Precision@K and Recall@K scores
+- Explore detailed metrics table
 
-### 4. Interactive Demo (streamlit_app/app.py)
-- Web interface for real-time recommendations
-- User preference input
-- Visualization of recommendation results
+## 📊 Model Performance
 
-## Usage
+The system evaluates recommender performance using:
+- **RMSE (Root Mean Square Error)** - Prediction accuracy
+- **MAE (Mean Absolute Error)** - Average prediction deviation
+- **Precision@5** - Relevance of recommendations
+- **Recall@5** - Coverage of relevant items
 
-1. Data Exploration:
-```bash
-jupyter notebook notebooks/01_DataExploration.ipynb
+## 👤 Credits
+
+Developed by Rahmat Khan
+
+## 📄 License
+
+This project is licensed under the MIT License - see below for details:
+
 ```
+MIT License
 
-2. Run Streamlit App:
-```bash
-cd streamlit_app
-streamlit run app.py
-```
+Copyright (c) 2024 Rahmat Khan
 
-## Contributing
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit changes
-4. Push to the branch
-5. Create a Pull Request
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
