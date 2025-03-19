@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -20,12 +21,8 @@ wheels/
 .installed.cfg
 *.egg
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
 # Virtual Environment
 venv/
-env/
 ENV/
 
 # IDE
@@ -34,30 +31,14 @@ ENV/
 *.swp
 *.swo
 
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Streamlit
-.streamlit/
-
-# Local development settings
-.env
-.env.local
-
-# Data files (optional - remove if you want to include data)
-# data/
-
-# Logs
-*.log
-
 # OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
 # Project specific
-data/ml-1m/
-*.dat
-*.zip
-*.model
-*.pkl 
+data/ml-1m/*.dat
