@@ -11,6 +11,7 @@ A sophisticated movie recommendation system that combines multiple recommendatio
   - 🎬 Item-based Collaborative Filtering
   - 🔢 SVD (Matrix Factorization)
 - **Interactive UI:**
+
   - Easy-to-use sidebar controls
   - Real-time recommendations
   - Expandable movie cards with ratings and genres
