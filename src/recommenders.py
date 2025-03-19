@@ -14,6 +14,34 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+class TrivialRecommender:
+    def __init__(self, min_ratings=100):
+        self.min_ratings = min_ratings
+        self.popular_movies = None
+
+    def fit(self, ratings_df, movies_df):
+        movie_counts = ratings_df.groupby('movie_id')['rating'].count()
+        popular_movies = movie_counts[movie_counts >= self.min_ratings].index.tolist()
+        self.popular_movies = movies_df[movies_df['movie_id'].isin(popular_movies)]
+
+    def get_top_n_recommendations(self, user_id, movies_df, n=10):
+        recommendations = self.popular_movies[['movie_id', 'title']].head(n)
+        return [(row['movie_id'], row['title'], 5.0) for _, row in recommendations.iterrows()]
+
+class MPIRecommender:
+    def __init__(self, min_rating=4.0):
+        self.min_rating = min_rating
+        self.popular_movies = None
+
+    def fit(self, ratings_df, movies_df):
+        avg_ratings = ratings_df.groupby('movie_id')['rating'].mean()
+        popular_movies = avg_ratings[avg_ratings >= self.min_rating].index.tolist()
+        self.popular_movies = movies_df[movies_df['movie_id'].isin(popular_movies)]
+
+    def get_top_n_recommendations(self, user_id, movies_df, n=10):
+        recommendations = self.popular_movies[['movie_id', 'title']].head(n)
+        return [(row['movie_id'], row['title'], 5.0) for _, row in recommendations.iterrows()]
+
 class BaseRecommender(ABC):
     """Base abstract class for recommendation algorithms."""
     
